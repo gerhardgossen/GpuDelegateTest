@@ -271,8 +271,13 @@ public class Camera2BasicFragment extends Fragment
         }
     }
 
-    public static Camera2BasicFragment newInstance() {
-        return new Camera2BasicFragment();
+    public static Camera2BasicFragment newInstance(ImageReader.OnImageAvailableListener imageListener) {
+        return new Camera2BasicFragment().setImageListener(imageListener);
+    }
+
+    private Camera2BasicFragment setImageListener(ImageReader.OnImageAvailableListener imageListener) {
+        this.imageListener = imageListener;
+        return this;
     }
 
     @Override
